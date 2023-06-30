@@ -1,0 +1,39 @@
+.up-arrow {
+    position: fixed;
+    bottom: 60px;
+    left: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    transform: translateY(100%);
+}
+
+.up-arrow:hover {
+    transform: translateY(0);
+}
+
+.arrow-symbol {
+    font-size: 24px;
+    transition: transform 0.5s;
+    transform: translateY(150%);
+}
+
+.hover-elements {
+    opacity: 0;
+    transition: opacity 0.5s;
+    justify-self: left;
+    background-color: gray;
+    border-radius: 10px;
+}
+
+.up-arrow:hover .hover-elements {
+    opacity: 1;
+}
+
+.up-arrow:hover .arrow-symbol {
+    transform: translateY(0);
+}
+
+under {
+    text-decoration: underline;
+}

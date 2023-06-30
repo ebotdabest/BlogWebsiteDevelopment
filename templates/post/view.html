@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{  title  }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/render.css' ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/view.css' ) }}">
+</head>
+<body style="background-color: white;">
+    {% include 'header.html'   %}
+    <div id="info">
+        <h1>{{  title  }}</h1>
+        <div id="profile-info">
+            <table>
+                <tr>
+                    <th><img src="{{  pfp  }}" alt="pfp"></th>
+                    <th><h2>{{  creatorName  }}</h2></th>
+                    <th style="font-size: 5px;">⚫</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>  
+    </div>
+    <div>
+        {{  content  | safe}}
+    </div>
+</body>
+</html>

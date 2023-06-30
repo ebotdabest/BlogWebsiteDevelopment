@@ -1,0 +1,135 @@
+:root {
+    --header-color: #5a5a5a;
+}
+body {
+    margin:0;
+}
+
+#header {
+    display:grid;
+    position: sticky;
+    top:0;
+    grid-template-areas: "🏠 👀 👀 😃";
+    grid-gap: 0;
+    place-items: center;
+    background-color: var(--header-color);
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+#header > a {
+    text-decoration: none;
+    color: black;
+}
+
+#user-holder {
+    display:grid;
+    grid-template-areas: "😉 A";
+    align-items: center;
+    grid-gap: 0;
+    text-decoration: none;
+    background: none;
+    border-color: transparent transparent transparent;
+}
+
+#user-holder:hover {
+    cursor:pointer;
+}
+
+#user-holder > img {
+    display:inherit;
+    grid-area: "😉";
+    border-radius: 50%;
+    height: 70%;
+    width: 70%;
+}
+
+#user-holder > p {
+    display:inherit;
+    grid-area: "A";
+    margin:0;
+    color:black;
+    font-size: 23px;
+
+}
+
+#brotha {
+    display:inline-table;
+}
+
+#bortha > a {
+    font-size: 23px;
+    text-decoration: none;
+    color:black;
+    font-family: 'Roboto';
+}
+
+
+.header-item:nth-child(1) {
+    display:grid;
+    grid-area: "🏠";
+    gap:0px;
+    justify-self: left;
+    font-size: 200%;
+    background: linear-gradient(90deg, rgba(199,255,0,1) 0%, rgba(0,255,28,1) 30%, rgba(0,161,255,1) 60%, rgba(255,0,225,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header-item:nth-child(2) {
+    display:grid;
+    grid-area: "✏";
+    gap:0px;
+    font-size: 130%;
+}
+
+.header-item:nth-child(3) {
+    display:grid;
+    grid-area: "🔍";
+    gap:0px;
+    font-size: 130%;
+}
+
+.header-item:nth-child(4) {
+    display:grid;
+    grid-area: "😃";
+    gap:0px;
+    justify-self: right;
+    font-size: 130%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar:hover {
+    cursor:pointer;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #383838;
+    border: 1px solid #000000;
+    border-radius: 26px;
+}
+  
+  /* Microsoft Edge and Internet Explorer */
+  
+::-ms-scrollbar {
+    width: 10px;
+}
+
+::-ms-scrollbar:hover {
+    cursor:pointer;
+}
+  
+::-ms-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+::-ms-scrollbar-thumb {
+    background: #383838;
+    border: 1px solid #000000;
+    border-radius: 2px;
+}

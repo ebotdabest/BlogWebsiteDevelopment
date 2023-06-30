@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css' ) }}">
+</head>
+<body>
+    {% include 'header.html'   %}
+    <div id="register-holder">
+        <h1 id="reg-title">Register</h1>
+        {{  issue | safe  }}
+        <form action="/register" method="post" id="register-form">
+            <input class="register-item" type="text" name="name" id="name" placeholder="Username" maxlength="35" minlength="5">
+            <br>
+            <input class="register-item" type="email" name="email" id="email" placeholder="jhon.doe@email.whatever">
+            <br>
+            <input class="register-item" type="password" name="pword" id="pword" placeholder="Password">
+            <br>
+            <input class="register-item" type="password" name="pwordt" id="pwordt" placeholder="Password again">
+            <br>
+            <input type="submit" value="Register">
+        </form>
+        
+        <p>Already have an account, then you can <a href="/login" id="underbtn">login</a></p>
+    </div>
+</body>
+</html>

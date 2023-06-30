@@ -1,0 +1,11 @@
+table.outline td {
+    border: 1px solid black;
+}
+
+table.outline-whole {
+    border: 2px solid black;
+}
+
+under {
+    text-decoration: underline;
+}

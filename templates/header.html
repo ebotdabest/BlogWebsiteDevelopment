@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css' ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css' ) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body onload="onLoad()">
+    <script>
+        var isOpened = false;
+        // function showYes() {
+        //     const dialog = document.getElementById('bortha');
+        //     if (isOpened) {
+        //         dialog.close();
+        //         isOpened = false;
+        //     }else {
+        //         isOpened = true;
+        //         var rect = document.getElementById("user-holder").getBoundingClientRect();
+        //         dialog.style.left = rect.left + 'px';
+        //         dialog.style.top = (rect.top + rect.height) + 'px';  // no gap between button and dialog
+        //         dialog.show();
+        //     }
+        // }
+        function showYes() {
+            const dialog = document.getElementById('bortha');
+            if (isOpened) {
+                dialog.close();
+                isOpened = false;
+            } else {
+                isOpened = true;
+                var rect = document.getElementById("user-holder").getBoundingClientRect();
+
+                var leftPosition = rect.left;
+                var topPosition = rect.top + rect.height;  // no gap between button and dialog
+
+                // If the dialog would overflow on the right, align its right side with the right side of the window
+                if (leftPosition + dialog.getBoundingClientRect().width > window.innerWidth) {
+                    leftPosition = window.innerWidth - dialog.getBoundingClientRect().width;
+                }
+
+                dialog.style.left = leftPosition - 70 + 'px';
+                dialog.style.top = topPosition + 'px';
+                dialog.show();
+            }
+        }
+
+        function showNo() {
+            const dialog = document.getElementById('bortha');
+            dialog.close();
+        }
+
+        document.addEventListener('click',function(event) {
+            var isClickInside = dialog.contains(event.target);
+            var isClickOnOpenButton = document.getElementById("user-holder").contains(event.target);
+    
+            if (!isClickInside && !isClickOnOpenButton) {
+                dialog.close();
+            } 
+        });
+
+        var dialog = null;
+        function onLoad() {
+            dialog = document.getElementById('bortha');
+        }
+    </script>
+    <div id="header">
+        <a href="/" class="header-item">Blogger</a>
+        <a href="/editor" class="header-item">Post</a>
+        <a href="/search" class="header-item">Search</a>
+        <div id="user" class="header-item">
+            {{  render_user() | safe  }}
+        </div>
+    </div>
+
+
+    <dialog id="bortha">
+        <a href="/dashboard">Dashboard</a>
+        <br>
+        <a href="/me">Account</a>
+        <br>
+        <a href="/logout">Logout</a>
+    </dialog>
+</body>
+</html>
