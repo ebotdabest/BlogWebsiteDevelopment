@@ -6,7 +6,7 @@ import re
 db = connect(
     host="localhost",
     user="root",
-    password="EbotdabesT",
+    password="Fuck off",
     database="blogdatabase"
 )
 cursor = db.cursor()
